@@ -7,3 +7,10 @@ services:
     container_name: prometheus
     ports: 
       - 9090:9090
+  alertmanager:
+    build:
+      context: ./alertmanager/
+      dockerfile: alertmanager.dockerfile
+    container_name: alertmanager
+    ports:
+      - 9093:9093
