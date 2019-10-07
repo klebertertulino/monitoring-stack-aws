@@ -1,0 +1,39 @@
+---
+region: sa-east-1
+metrics:
+  #AWS/ELB Metrics
+  - aws_namespace: AWS/ELB
+    aws_metric_name: RequestCount
+    aws_dimensions: [AvailabilityZone, LoadBalancerName]
+    aws_statistics: [Sum, SampleCount, Minimum, Maximum, Average]
+
+  - aws_namespace: AWS/ELB
+    aws_metric_name: HealthyHostCount
+    aws_dimensions: [AvailabilityZone, LoadBalancerName]
+    aws_statistics: [Sum, SampleCount, Minimum, Maximum, Average]
+
+  - aws_namespace: AWS/ELB
+    aws_metric_name: UnHealthyHostCount
+    aws_dimensions: [AvailabilityZone, LoadBalancerName]
+    aws_statistics: [Sum, SampleCount, Minimum, Maximum, Average]
+
+  #AWS/ECS Metrics
+  - aws_namespace: AWS/ECS
+    aws_metric_name: MemoryUtilizationd
+    aws_dimensions: [ClusterName, ServiceName]
+    aws_statitics: [Sum, SampleCount, Minimum, Maximum, Average]
+
+  - aws_namespace: AWS/ECS
+    aws_metric_name: MemoryReservation
+    aws_dimensions: [ClusterName, ServiceName]
+    aws_statistics: [Sum, SampleCount, Minimum, Maximum, Average]
+
+  - aws_namespace: AWS/ECS
+    aws_metric_name: CPUUtilization
+    aws_dimensions: [ClusterName, ServiceName]
+    aws_statistics: [Sum, SampleCount, Minimum, Maximum, Average]
+
+  - aws_namespace: AWS/ECS
+    aws_metric_name: CPUReservation
+    aws_dimensions: [ClusterName, ServiceName]
+    aws_statistics: [Sum, SampleCount, Minimum, Maximum, Average]

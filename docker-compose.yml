@@ -21,3 +21,10 @@ services:
     container_name: grafana
     ports:
       - 3000:3000
+  cloudwatch-exporter:
+    build:
+      context: ./cloudwatch-exporter/
+      dockerfile: cloudwatch-exporter.dockerfile
+    container_name: cloudwatch-exporter
+    ports:
+      - 9106:9106
