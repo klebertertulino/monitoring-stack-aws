@@ -1,0 +1,9 @@
+version: "3.0"
+services:
+  prometheus:
+    build:
+      context: ./prometheus/
+      dockerfile: prometheus.dockerfile
+    container_name: prometheus
+    ports: 
+      - 9090:9090
